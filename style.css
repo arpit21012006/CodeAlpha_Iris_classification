@@ -1,0 +1,372 @@
+/* IrisVision — Dashboard Theme */
+
+:root {
+    --background: #0b1020;
+    --surface: #141b30;
+    --surface-light: #1b2540;
+    --border: rgba(167, 139, 250, 0.17);
+    --text: #f4f4ff;
+    --muted: #a9b4ce;
+    --purple: #a78bfa;
+    --pink: #f472b6;
+    --cyan: #38bdf8;
+}
+
+/* Main application */
+
+html,
+body,
+[data-testid="stApp"],
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"] {
+    background: var(--background) !important;
+    color: var(--text);
+}
+
+[data-testid="stHeader"] {
+    background: var(--background) !important;
+}
+
+[data-testid="stToolbar"] {
+    background: transparent !important;
+}
+
+[data-testid="stSidebar"] {
+    background: linear-gradient(
+        180deg,
+        #151c35 0%,
+        #0d1427 100%
+    ) !important;
+    border-right: 1px solid var(--border);
+}
+
+[data-testid="stSidebar"] * {
+    color: #e6e9fa;
+}
+
+/* Typography */
+
+h1, h2, h3 {
+    color: var(--text) !important;
+    letter-spacing: -0.5px;
+}
+
+p, label {
+    color: var(--muted);
+}
+
+.block-container {
+    max-width: 1350px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+/* Hero banner */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 34px 38px;
+    margin-bottom: 25px;
+    border-radius: 22px;
+    background: linear-gradient(
+        115deg,
+        #20234b 0%,
+        #251b49 55%,
+        #38204b 100%
+    );
+    border: 1px solid rgba(196, 181, 253, 0.2);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    top: -110px;
+    right: -60px;
+    border-radius: 50%;
+    background: rgba(244, 114, 182, 0.13);
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+.hero-label {
+    color: #c4b5fd;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 12px 0;
+    font-size: clamp(28px, 3vw, 43px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero p {
+    max-width: 680px;
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* Metric cards */
+
+.metric-card {
+    min-height: 120px;
+    padding: 23px;
+    margin-bottom: 15px;
+    border-radius: 17px;
+    background: linear-gradient(
+        145deg,
+        #1a2440,
+        #131a30
+    );
+    border: 1px solid var(--border);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(167, 139, 250, 0.55);
+}
+
+.metric-label {
+    color: #aebad5;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.metric-value {
+    font-size: 30px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.metric-caption {
+    margin-top: 7px;
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+/* Section titles */
+
+.section-title {
+    font-size: 26px;
+    font-weight: 750;
+    margin-top: 22px;
+    margin-bottom: 8px;
+    color: #f8fafc;
+}
+
+.section-subtitle {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #a9b4ce;
+    margin-bottom: 24px;
+}
+
+/* Prediction result */
+
+.prediction-card {
+    padding: 30px;
+    margin: 24px 0;
+    text-align: center;
+    border-radius: 22px;
+    border: 1px solid rgba(167, 139, 250, 0.5);
+    background: radial-gradient(
+        circle at top,
+        #332657 0%,
+        #161d34 75%
+    );
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+}
+
+.prediction-label {
+    font-size: 12px;
+    color: #c4b5fd;
+    font-weight: 750;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.prediction-species {
+    margin: 14px 0;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 850;
+    color: #f5d0fe;
+}
+
+.prediction-confidence {
+    font-size: 15px;
+    color: #cbd5e1;
+}
+
+/* Buttons */
+
+.stButton > button {
+    width: 100%;
+    min-height: 47px;
+    color: white !important;
+    background: linear-gradient(
+        110deg,
+        #7c3aed,
+        #db2777
+    ) !important;
+    border: none !important;
+    border-radius: 11px !important;
+    font-weight: 700 !important;
+    transition: filter 0.2s, transform 0.2s;
+}
+
+.stButton > button:hover {
+    filter: brightness(1.13);
+    transform: translateY(-1px);
+}
+
+/* Tabs */
+
+.stTabs [data-baseweb="tab-list"] {
+    gap: 9px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    padding: 10px 17px;
+    border-radius: 10px;
+    background: #19223a;
+    color: #cbd5e1;
+    border: 1px solid rgba(167, 139, 250, 0.12);
+}
+
+.stTabs [aria-selected="true"] {
+    background: #342657 !important;
+    color: #e9d5ff !important;
+    border-color: #a78bfa !important;
+}
+
+/* Input fields */
+
+[data-testid="stNumberInput"] input,
+[data-testid="stSelectbox"] > div {
+    background: #18213a !important;
+    color: #f8fafc !important;
+    border-radius: 9px;
+}
+
+[data-testid="stNumberInput"] input {
+    border: 1px solid rgba(167, 139, 250, 0.22);
+}
+
+/* Information panels */
+
+.info-card {
+    background: #171f36;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 22px;
+    margin: 15px 0;
+}
+
+.info-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Streamlit metrics */
+
+[data-testid="stMetric"] {
+    background: #19223b;
+    padding: 19px;
+    border-radius: 13px;
+    border: 1px solid var(--border);
+}
+
+[data-testid="stMetricValue"] {
+    color: #e9d5ff;
+}
+
+/* Dataframes and charts */
+
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+[data-testid="stPlotlyChart"] {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Sidebar branding */
+
+.sidebar-brand {
+    font-size: 24px;
+    font-weight: 850;
+    color: #e9d5ff;
+    margin-bottom: 3px;
+}
+
+.sidebar-tagline {
+    font-size: 11px;
+    color: #a9b4ce;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+/* Footer */
+
+.dashboard-footer {
+    margin-top: 45px;
+    padding: 22px 10px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 768px) {
+    .block-container {
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 25px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .metric-card {
+        min-height: 100px;
+        padding: 18px;
+    }
+
+    .metric-value {
+        font-size: 25px;
+    }
+
+    .prediction-card {
+        padding: 22px 16px;
+    }
+
+    .section-title {
+        font-size: 23px;
+    }
+}
